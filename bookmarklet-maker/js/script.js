@@ -36,3 +36,42 @@ function dropBookmarklet(event) {
     document.getElementById("code-textarea").value = decodeURIComponent(data.slice(11)).slice(12, -5);
 }
 
+async function showStoredBookmarklets(){
+    const storedBookmarklets = document.querySelector("#storedBookmarklets");
+    const template = document.querySelector("#storedBookmarklet");
+    const response = await fetch("./js/examples.json");
+    const examples = await response.json();
+    for (const example of examples) {
+        const bml = template.content.cloneNode(true);
+        let title = bml.querySelector("#storedBookmarkletTitle");
+        let Description = bml.querySelector("#storedBookmarkletDescription");
+        let code = bml.querySelector("#storedBookmarkletCode");
+        title.textContent = example.Title;
+        title.href = example.Url;
+        Description.textContent = example.Description;
+        code.textContent = example.Code;
+        storedBookmarklets.appendChild(bml);
+    }
+    
+}
+
+// class bookmarklet {
+//     constructor(title, url, code, description){
+//         this.Title = title;
+//         this.Url = url;
+//         this.Code = code;
+//         this.Description = description;
+//     }
+// }
+
+// function extractExamples() {
+//     let examples = [];
+//     const storedBookmarklets = document.querySelector("#storedBookmarklets");
+//     let p = storedBookmarklets.querySelectorAll("p");
+//     let pre = storedBookmarklets.querySelectorAll("pre");
+//     for (let i = 0; i < pre.length; i++) {
+//         examples.push(new bookmarklet(p[i*2+1].textContent, p[i*2+1].childNodes[0].href, pre[i].textContent, p[i*2].textContent));
+        
+//     }
+//     document.getElementById("code-textarea").value = JSON.stringify(examples);
+// }

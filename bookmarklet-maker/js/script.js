@@ -1,4 +1,8 @@
 'use strict'
+document.addEventListener("DOMContentLoaded", () => {
+    showStoredBookmarklets();
+  });
+
 function cleanCode(code) {
     return code.trim()
 }

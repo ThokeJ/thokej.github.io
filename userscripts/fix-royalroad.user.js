@@ -4,7 +4,7 @@
 // @version      2024-06-13
 // @description  Fix royalroad, screen reader.
 // @author       ThokeJ
-// @match        https://www.royalroad.com/fiction/*
+// @match        https://www.royalroad.com/fiction/*/chapter/*
 // @icon         https://icons.duckduckgo.com/ip2/royalroad.com.ico
 // @grant        none
 // ==/UserScript==

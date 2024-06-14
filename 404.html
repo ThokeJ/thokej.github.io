@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File/Directory not found.</title>
+</head>
+
+<body>
+    <H1>File/Directory not found.</H1>
+    <pre></pre>
+</body>
+<script>
+    const d = document.querySelector("pre");
+    //https://api.github.com/repos/ThokeJ/thokej.github.io/contents/
+    async function run() {
+        const response = await fetch("https://api.github.com/repos/ThokeJ/thokej.github.io/contents" + window.location.pathname);
+        if (response.ok) {
+            document.title = "Index Of " + window.location.pathname;
+            document.querySelector("H1").textContent = "Index Of " + window.location.pathname;
+            const contents = await response.json();
+            for (const file of contents) {
+                const s = document.createElement("a");
+                s.innerText = file.name;
+                s.href = "/" + file.path;
+                d.appendChild(s);
+                d.appendChild(document.createTextNode("\n"));
+            }
+        }
+    }
+    run();
+</script>
+
+</html>

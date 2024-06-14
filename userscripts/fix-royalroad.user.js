@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fix royalroad
 // @namespace    https://thokej.github.io/
-// @version      2024-06-14
+// @version      2024-06-14.2
 // @description  Fix royalroad, screen reader.
 // @author       ThokeJ
 // @match        https://www.royalroad.com/fiction/*/chapter/*

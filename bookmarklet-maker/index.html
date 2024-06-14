@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bookmarklet Maker</title>
+    <meta name="keywords" content="bookmarklet, hack, javascript, automate, browse, app"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <meta name="description" content="Bookmarklet creator tool.">
+    <link rel="icon" type="image/png" sizes="96x96" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFOUlEQVR4nO2dz6uVRRjHP0dTyhRLgwxcWGoluZHChbQyMo0osyKrf6DaSFLZKgx/biosyVZlLbrpKlP6ca2gTWCKmYJda1FBtbC6qenVq3Imhp4L8vKe8/6ad37d+cADh3vPmWfm+7zvvDPPzJwDiUQikUgkEolEIpFIJNrlNmAd8AXwA3AWUI7srNRhP/AicGvMwb8L+NKh2Kqk6QvjTiJiErAd6Hogrippuq5vAFcRONcDX3kgqGpwN1xHwFd+CF2OKrCvgckEyHYPxFOGbBsBPnBD6vNVgXVDezDH0PWojOmhahDc7oFYqiULYp7wkgdCqZbsBQJgvwdCqZZskAD40QOhVEs2RAD864FQqiXTbfMeFbl5j2uBVAqAe5FUugPcC6VSFxSneY9rgVQKgHuRVLoD3AulUhcUp3mPa4FUCoB7kVS6A9wLpVIXFKd5j2uBVAqAe5FUugPcC6VSFxSneY9rgVQKgHuRVLoD3AulUhcUp3mPCmybydvA08BSYK5sqdc7u68GbpQTPfcCzwPvEwDKc/seWAvMJlKUp7ub9wFLGAcoz+wQsJhxhPLEzgNrgIl96joVuB/YCuyVZ8IwcFFsWE5RfgxsAVbIZ7xGeWA/AYt61K8jQu4GLtQM7C5guZTlHa7F/waY0aNujwFHDfo6AqzCM1yK/zlwbU6d5suJxza3rc/DE1yJf6CH+I8Apyz4PwM8iQe46vNnZOqh++fNDuqy0fWzwXaDz+c8cLUAOxxdDNrechkE241dk1MHF1d+1jbgCNuTrIkZ/081LPMdyQFp29mwrMdjDkA3Z4Y7v+ERqV8lETfGJPlb3fJOS4IvygDsy/HddKipZ7tZtoZ2stJWAJZk/D5qoMy82fMiA+U+jEVsiH8s47NjYIbb7wjqcQMz5k5MAVib8bnCQJnr+7RpvYHy7yOiAMzO+NxtoMwFfdq0wED5A1iibfGHMv6m1cxqZruIIo409DECTCGCAOyo2P18C9zRcpt1/74QOFhQl2VEEIBnKg4TtTC2WFhQFz1DDz4ASzP+9ha83+YK1rSCuuyJIQBzMv5O1MgVtcVzBXXRy5vBB2Bmxt9fBe+/DLwMTGixzRPEx+WCuvxJBAGYnPE3WvJz+vtLZ7XQ3huAT0vWQY/Wxm0AFPAbcLfBtupk4C8V/AcfgJ+Bayp2QVm7JNsMm6QGOvL9cZcq+g66CxoApuf4G6pZ3rsN2lh3nUDnlFrHtPAjBSOZomFov2XDutRd7vwIC5gU/6AssvRjS82y9caquiyv6XMTFjC12rWt5Jdm18mEnmr4hdx6peyfGn71NvfWaSr+78A9FfxNlZ0RVXx8aKCdAxV9ngshGbdHxtVV2VXRz+qC8h4S68fqij4/wBJ1H7TPNhgaVumTR3uMppBu6TXpArvyuldXNb3iHMRKJpQa4h81kC7uVMjX6wd7HnNke2P2/Qdy8k9jHCrp87CPS5Jd4E05i2WCVRWeMVduPdGslLMAvT4zLO+5El3GHyV9PohFylToJPBAC74HS/rfKXmhm+Qi6Fa4YGaJvVfS1ydYpqhCg9LwNpgnu5SVJ6aHu7dgmV65mVEDOZgyPOGB8GOmD4RY59Wcipyw/BssGz0Q/xUcMTaUOyl3w+sODrZ1JNfjSnz9C1IJ/v/NStvi600CiczwtE7epqqdKTHDHrfMBT5rUXw91LzZdSNDYCXwnUHhD9ueZMVARzbKDkgOqqroI5JYW+brQe2QmCJCbpbVKr1k+LfMWUbl9XH53ybJ51tJKScSiUSC6PkPulZ+GxuKaykAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="./css/style.css">
+    <style></style>
+    <script type="text/javascript" src="./js/script.js"></script>
+    
+  </head>
+  <body>
+    <div id="top.div">
+      <h1>Bookmarklet Maker</h1>
+      <a href="https://github.com/caiorss/bookmarklet-maker">Github Repository</a>
+    </div>
+    
+    <div id="main.div">
+      <ul id="nodisc-ul">
+        <li>
+          <label>Title:</label>
+          <input id="title-input" value="bookmarklet"></input>
+        </li>
+        <li> <label>Code</label></li>
+        <li> <textarea id="code-textarea" ondrop="dropBookmarklet(event)">alert('hello world');</textarea> </li>
+        <li>          
+          <button onclick="generateBookmarklet();">Generate Bookmarklet</button>
+          <button onclick="runCode();">Run Code</button>
+          <button onclick="clearCode();">Clear</button>
+          
+        </li>
+        <li><b>Bookmaklet: </b><a id="bookmarklet-a" class="bookmarklet" href="">bookmarklet</a></li>
+        <li></li>
+        
+        <li><b>Output:</b></li>
+        <li><textarea id="output-textarea" class="output-textarea"></textarea></li>
+
+        <li><b>Html code:</b></li>
+        <li><textarea id="htmlOuput-textarea" class="output-textarea"></textarea></li>
+        
+      </ul>
+    </div>
+
+    <div>
+      <h2>Usage:</h2>
+      <ul>
+        <li>Usage: Paste a code into the form and click on the button generate.</li>
+        <li>To test the bookmarklet click on the blue button.</li>
+        <li>To install the bookmarklet drag and drop it to the bookmars toolbar.</li>        
+      </ul>           
+    </div>
+
+    <div id="storedBookmarklets">
+      <h2>Examples:</h2>
+    </div>
+    <template id="storedBookmarklet">
+      <p id="storedBookmarkletDescription"></p>
+      <p><a href="" id="storedBookmarkletTitle"></a></p>
+      <pre id="storedBookmarkletCode">
+      </pre>
+    </template>
+  </body>
+</html>

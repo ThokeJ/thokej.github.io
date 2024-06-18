@@ -42,7 +42,7 @@ function dropBookmarklet(event) {
 
 async function showStoredBookmarklets(){
     const storedBookmarklets = document.querySelector("#storedBookmarklets");
-    const template = document.querySelector("#storedBookmarklet");
+    const template = document.querySelector("template");
     const response = await fetch("./js/examples.json");
     const examples = await response.json();
     for (const example of examples) {

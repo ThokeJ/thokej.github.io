@@ -83,3 +83,7 @@ li {
     display: block;
     padding: 10px 20px;
 }
+
+div#storedBookmarklets button {
+    display: none;
+}

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fix royalroad
 // @namespace    https://thokej.github.io/
-// @version      2024-08-13.v2
+// @version      2025-05-02
 // @description  Fix royalroad, screen reader.
 // @author       ThokeJ
 // @match        https://www.royalroad.com/fiction/*/chapter/*
@@ -11,7 +11,7 @@
 
 (function () {
     'use strict';
-    
+
     let q = /(?<ma>(?:-(?:0-){2,})|(?:\*(?: \*){2,})|(?:_{2,})|^(?:<[^>]+>)*(?:(?:\*|#)+)(?:<\/[^>]+>)*$)/gm;
-    document.querySelectorAll('p:not(:has(> [aria-hidden="true"]))').forEach((t) => { if (t.innerHTML.match(q)) t.innerHTML = t.innerHTML.replace(q, "<span aria-hidden=\"true\">$<ma></span>") });
+    document.querySelectorAll(':is(p,div,span:not([aria-hidden="true"])):not(:has(> *))').forEach((t) => { if (t.innerHTML.match(q)) t.innerHTML = t.innerHTML.replace(q, "<span aria-hidden=\"true\">$<ma></span>") });
 })();

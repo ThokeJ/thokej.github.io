@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Fix AO3
 // @namespace    https://thokej.github.io/
-// @version      2025-05-02
+// @version      2025-05-03
 // @description  Fix archiveofourown, screen reader.
 // @author       ThokeJ
 // @match        https://archiveofourown.org/works/*/chapters/*
-// @icon         https://icons.duckduckgo.com/ip2/archiveofourown.org.ico
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=archiveofourown.org
 // @grant        none
 // ==/UserScript==
 

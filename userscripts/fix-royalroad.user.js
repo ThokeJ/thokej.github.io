@@ -12,6 +12,6 @@
 (function () {
     'use strict';
 
-    let q = /(?<ma>(?:-(?:0-){2,})|(?:\*(?: \*){2,})|(?:_{2,})|^(?:<[^>]+>)*(?:(?:\*|#)+)(?:<\/[^>]+>)*$)/gm;
+    let q = /(?<ma>(?:-(?:0-){2,})|(?:\*(?: \*){2,})|(?:_{2,})|(?:(?:\*|#)+))/gm;
     document.querySelectorAll(':is(p,div,span:not([aria-hidden="true"])):not(:has(> *))').forEach((t) => { if (t.innerHTML.match(q)) t.innerHTML = t.innerHTML.replace(q, "<span aria-hidden=\"true\">$<ma></span>") });
 })();

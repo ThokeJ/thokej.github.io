@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fix AO3
 // @namespace    https://thokej.github.io/
-// @version      2025-05-22
+// @version      2025-05-23
 // @description  Fix archiveofourown, screen reader.
 // @author       ThokeJ
 // @match        https://archiveofourown.org/works/*/chapters/*

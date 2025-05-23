@@ -45,7 +45,7 @@ class ThoJak {
     static cleanup() {
         this.TtsIgnore.cleanup();
         this.#Console = null;
-        this.#iframe.remove();
+        this.#iframe?.remove();
         this.#iframe = null;
     }
 }

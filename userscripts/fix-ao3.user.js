@@ -10,6 +10,7 @@
 // @grant        none
 // ==/UserScript==
 /** @import * from "./common/common.js" */
+/* global ThoJak */
 
 (function () {
     'use strict';

@@ -16,7 +16,7 @@
     'use strict';
     document.querySelectorAll('.chapter-content span[class]:not(:has(> :not(br,hr,em)))').forEach((el) => {
         ThoJak.MyConsole.groupCollapsed("Found a <span>");
-        ThoJak.MyConsole.log("%o", el.outerHTML);
+        ThoJak.MyConsole.log("%s", el.outerHTML);
         el.remove()
         ThoJak.MyConsole.log("<span> removed");
         ThoJak.MyConsole.groupEnd();

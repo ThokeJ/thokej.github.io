@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fix AO3
 // @namespace    https://thokej.github.io/
-// @version      2025-05-23
+// @version      2025-10-09
 // @description  Fix archiveofourown, screen reader.
 // @author       ThokeJ
 // @match        https://archiveofourown.org/works/*/chapters/*
@@ -15,5 +15,5 @@
 (function () {
     'use strict';
     ThoJak.TtsIgnore.CustomPageDecorations();
-    ThoJak.TtsIgnore.NonChapterContent('.userstuff.module');
+    ThoJak.TtsIgnore.NonChapterContent('.userstuff[role=article]');
 })();

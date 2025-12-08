@@ -6,7 +6,7 @@ class ThoJak {
 
     static TtsIgnore = class TtsIgnore {
         static CustomPageDecorations() {
-            let q = /(?<ma>(?:-(?:0-){2,})|(?:\*(?: \*){2,})|(?:_{2,})|(?:(?<=[>\s])(?:\*|#)+(?=[<\s]))|(?:^(?:\*|#)+$))/gm;
+            let q = /(?<ma>(?:-(?:0-){2,})|(?:\*(?: \*){2,})|(?:_{2,})|(?:(?<=>|\s|^)(?:\*|#)+(?=<|\s|$))|(?:(?=\b)\*|\*(?=\b)))/gm;
             document.querySelectorAll(':is(p,div,span):not([aria-hidden="true"]):not(:has(> :not(br,hr,em,strong)))').forEach((el) => {
                 if (el.innerHTML.match(q)) el.innerHTML = el.innerHTML.replace(q, "<span aria-hidden=\"true\">$<ma></span>");
             });

@@ -17,6 +17,12 @@ class ThoJak {
                 el.setAttribute("aria-hidden", "true");
             });
         }
+
+        static HTMLelement(selector) {
+            document.body.querySelectorAll(selector).forEach((el) => {
+                el.setAttribute("aria-hidden", "true");
+            });
+        }
         static cleanup() {
 
         }

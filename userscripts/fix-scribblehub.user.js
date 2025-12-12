@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fix scribblehub
 // @namespace    https://thokej.github.io/
-// @version      2025-11-27
+// @version      2025-12-12
 // @description  Fix scribblehub, screen reader.
 // @author       ThokeJ
 // @match        https://www.scribblehub.com/read/*/chapter/*/
@@ -16,4 +16,5 @@
     'use strict';
     ThoJak.TtsIgnore.CustomPageDecorations();
     ThoJak.TtsIgnore.NonChapterContent('div.chp_raw');
+    ThoJak.TtsIgnore.HTMLelement('blockquote');
 })();

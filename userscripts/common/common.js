@@ -28,6 +28,18 @@ class ThoJak {
         }
     }
 
+    static Edit = class Edit {
+        static RemoveElement(selector) {
+            document.body.querySelectorAll(selector).forEach((el) => {
+                el.remove()
+            });
+        }
+
+        static cleanup() {
+
+        }
+    }
+
     static test(path, func) {
         if (window.location.pathname == path) {
             func();
@@ -50,6 +62,7 @@ class ThoJak {
 
     static cleanup() {
         this.TtsIgnore.cleanup();
+        this.Edit.cleanup();
         this.#Console = null;
         this.#iframe?.remove();
         this.#iframe = null;

@@ -40,7 +40,7 @@ class ThoJak {
         }
 
         static FixPunctuation() {
-            letq = /´(s|t|l|m|d|re|ve)/g;
+            let q = /´(s|t|l|m|d|re|ve)/g;
             document.body.querySelectorAll('*:not(:has(>:not(br)))').forEach((el) => {
                 if (el.innerHTML.match(q)) 
                     el.innerHTML = el.innerHTML.replace(q, "'$1") 

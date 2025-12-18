@@ -31,8 +31,20 @@ class ThoJak {
     static Edit = class Edit {
         static RemoveElement(selector) {
             document.body.querySelectorAll(selector).forEach((el) => {
-                el.remove()
+                el.remove();
             });
+        }
+
+        static UnCensorSwearWords() {
+
+        }
+
+        static FixPunctuation() {
+            letq = /´(s|t|l|m|d|re|ve)/g;
+            document.body.querySelectorAll('*:not(:has(>:not(br)))').forEach((el) => {
+                if (el.innerHTML.match(q)) 
+                    el.innerHTML = el.innerHTML.replace(q, "'$1") 
+                });
         }
 
         static cleanup() {

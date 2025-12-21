@@ -35,16 +35,36 @@ class ThoJak {
             });
         }
 
-        static UnCensorSwearWords() {
+        static #UnCensoredWords = ['fuck','fucking','bitche','bitches','shit'];
+        /** @param {string} censoredWord  */
+        static #toUnCensoredWord(censoredWord) {
+            let UnCensorWord = "";
+            if (censoredWord.length > 0) {
+                let isUpperCase = /^[A-Z]+$/.test(censoredWord.replaceAll('*',''));
+                let indexOfUnCensoredWord = this.#UnCensoredWords.findIndex((w)=> (new RegExp("^" + censoredWord.replaceAll("*",".") + "$","i")).test(w));
+                if(indexOfUnCensoredWord !== -1){
+                    UnCensorWord = censoredWord[0] + (isUpperCase ? this.#UnCensoredWords[indexOfUnCensoredWord].slice(1).toUpperCase() : this.#UnCensoredWords[indexOfUnCensoredWord].slice(1));
+                }else{
+                    UnCensorWord = censoredWord;
+                }
+            }
+            return UnCensorWord;
+        }
 
+        static UnCensorSwearWords() {
+            let q = /\w+\*+\w*/g;
+            document.body.querySelectorAll('*:not(:has(>:not(br)))').forEach((el) => {
+                if (el.innerHTML.match(q))
+                    el.innerHTML = el.innerHTML.replace(q, this.#toUnCensoredWord);
+            });
         }
 
         static FixPunctuation() {
             let q = /´(s|t|l|m|d|re|ve)/g;
             document.body.querySelectorAll('*:not(:has(>:not(br)))').forEach((el) => {
-                if (el.innerHTML.match(q)) 
-                    el.innerHTML = el.innerHTML.replace(q, "'$1") 
-                });
+                if (el.innerHTML.match(q))
+                    el.innerHTML = el.innerHTML.replace(q, "'$1");
+            });
         }
 
         static cleanup() {

@@ -38,7 +38,7 @@ class ThoJak {
         /** @param {string} censoredWord  */
         static #toUnCensoredWord(censoredWord) {
             let UnCensorWord = "";
-            let UnCensoredWords = ['fuck','fucking','bitche','bitches','shit'];
+            let UnCensoredWords = ['fuck','fucking','fucker','bitche','bitches','shit','pussy'];
             if (censoredWord.length > 0) {
                 let isUpperCase = /^[A-Z]+$/.test(censoredWord.replaceAll('*',''));
                 let indexOfUnCensoredWord = UnCensoredWords.findIndex((w)=> (new RegExp("^" + censoredWord.replaceAll("*",".") + "$","i")).test(w));

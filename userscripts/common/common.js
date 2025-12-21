@@ -35,15 +35,15 @@ class ThoJak {
             });
         }
 
-        static #UnCensoredWords = ['fuck','fucking','bitche','bitches','shit'];
         /** @param {string} censoredWord  */
         static #toUnCensoredWord(censoredWord) {
             let UnCensorWord = "";
+            let UnCensoredWords = ['fuck','fucking','bitche','bitches','shit'];
             if (censoredWord.length > 0) {
                 let isUpperCase = /^[A-Z]+$/.test(censoredWord.replaceAll('*',''));
-                let indexOfUnCensoredWord = this.#UnCensoredWords.findIndex((w)=> (new RegExp("^" + censoredWord.replaceAll("*",".") + "$","i")).test(w));
+                let indexOfUnCensoredWord = UnCensoredWords.findIndex((w)=> (new RegExp("^" + censoredWord.replaceAll("*",".") + "$","i")).test(w));
                 if(indexOfUnCensoredWord !== -1){
-                    UnCensorWord = censoredWord[0] + (isUpperCase ? this.#UnCensoredWords[indexOfUnCensoredWord].slice(1).toUpperCase() : this.#UnCensoredWords[indexOfUnCensoredWord].slice(1));
+                    UnCensorWord = censoredWord[0] + (isUpperCase ? UnCensoredWords[indexOfUnCensoredWord].slice(1).toUpperCase() : UnCensoredWords[indexOfUnCensoredWord].slice(1));
                 }else{
                     UnCensorWord = censoredWord;
                 }
